@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Vinna 💕 · Forever Love</title>
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #f8e1e9 0%, #fad1e6 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts and VINNA background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart,
+        .vinna-letter {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 100, 150, 0.2);
+            animation: float 6s infinite ease-in-out;
+            font-weight: bold;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Main container */
+        .vinna-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 60px 60px 40px 40px;
+            box-shadow:
+                0 30px 50px rgba(215, 90, 130, 0.3),
+                0 0 0 4px rgba(255, 215, 230, 0.9) inset,
+                0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 30px 25px 40px;
+            border: 2px solid #ffc1d0;
+        }
+
+        /* Header with Vinna's name */
+        .vinna-header {
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .name-banner {
+            background: linear-gradient(135deg, #ff8da1, #ffb3c6);
+            padding: 15px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 10px;
+            box-shadow: 0 8px 0 #b34f67;
+            border: 2px solid white;
+        }
+
+        .vinna-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 3px 3px 0 #b34f67;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+
+        .vinna-header .sub {
+            font-size: 1.3rem;
+            color: #a14f63;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .vinna-header .sub i {
+            color: #ff4d6d;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Main surprise card - CLICKABLE */
+        .surprise-card {
+            background: linear-gradient(145deg, #ffe4f0, #ffd5e8);
+            border-radius: 50px;
+            padding: 25px 20px 20px;
+            margin: 20px 0 25px;
+            box-shadow:
+                0 15px 25px rgba(255, 80, 130, 0.3),
+                0 5px 0 #ffa5c0 inset,
+                0 -5px 0 #ffc5dd inset;
+            border: 4px solid white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .surprise-card:active {
+            transform: scale(0.97);
+            box-shadow: 0 8px 15px rgba(255, 60, 110, 0.4);
+        }
+
+        .click-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #ff3b6b;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 5px 0 #a32a45;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        .vinna-tag {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #ffb347;
+            color: #8b3f4f;
+            padding: 5px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 0 #b3742e;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background: #ff9ebd;
+            border-radius: 35px;
+            margin: 15px auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 15px 0 #d45e82,
+                0 20px 30px rgba(255, 70, 120, 0.5);
+            border: 5px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .gift-box .emoji {
+            font-size: 75px;
+            filter: drop-shadow(3px 5px 0 #ff6b93);
+        }
+
+        .surprise-message {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #b34763;
+            margin: 5px 0;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .sweet-text {
+            font-size: 1.2rem;
+            color: #a06276;
+            margin-bottom: 8px;
+        }
+
+        .love-note {
+            background: rgba(255, 230, 245, 0.9);
+            border-radius: 30px;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            color: #b33b57;
+            border: 2px dashed #ff8da9;
+            margin-top: 15px;
+        }
+
+        .love-note i {
+            color: #ff4d6d;
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            border-radius: 40px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(255, 150, 180, 0.2);
+            border: 2px solid #ffc1d0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff4d6d;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #9f6b7a;
+            font-weight: 600;
+        }
+
+        /* Messages grid */
+        .messages-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0 15px;
+        }
+
+        .messages-title h3 {
+            font-size: 1.5rem;
+            color: #ad4b63;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .messages-title i {
+            color: #ff6b93;
+            font-size: 1.8rem;
+        }
+
+        .message-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .message-item {
+            background: white;
+            aspect-ratio: 1/1;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 0 #ffb0c6, 0 10px 20px rgba(255, 100, 130, 0.2);
+            border: 2px solid #ffe2ec;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .message-item:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #ff9eb6, 0 5px 10px rgba(255, 80, 110, 0.2);
+        }
+
+        .message-item i {
+            font-size: 2rem;
+            color: #ff6b93;
+            margin-bottom: 5px;
+        }
+
+        .message-item span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #a0435f;
+        }
+
+        .message-item.large {
+            grid-column: span 3;
+            aspect-ratio: auto;
+            padding: 15px;
+            flex-direction: row;
+            gap: 15px;
+            background: #ffebf2;
+        }
+
+        .message-item.large i {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Vinna's special section */
+        .vinna-special {
+            background: linear-gradient(145deg, #fbc1d0, #ffd5e2);
+            border-radius: 40px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 3px solid white;
+            text-align: center;
+        }
+
+        .vinna-special h4 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #a13552;
+            margin-bottom: 10px;
+        }
+
+        .vinna-letters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .letter-box {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff4d6d;
+            box-shadow: 0 5px 0 #ffb0c0;
+            border: 2px solid #ffc0cb;
+            animation: bounce 2s infinite;
+        }
+
+        .letter-box:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .letter-box:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .letter-box:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .letter-box:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* History section */
+        .history-section {
+            background: rgba(255, 220, 240, 0.6);
+            border-radius: 40px;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .history-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #b35f73;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .history-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .history-icon {
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 0 #ffb8c9;
+            border: 2px solid #ffcbd8;
+        }
+
+        /* Special message banner */
+        .special-banner {
+            background: linear-gradient(90deg, #ffa5bc, #ffc1d4);
+            border-radius: 30px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 4px solid white;
+            margin: 15px 0;
+        }
+
+        .special-banner .text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #8f3b4f;
+        }
+
+        .special-banner .heart-beat {
+            color: #ff2b55;
+            font-size: 2rem;
+            animation: heartbeat 1s infinite;
+        }
+
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            color: #b37282;
+            font-size: 1rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px dotted #ffb0c6;
+        }
+
+        .footer-note i {
+            color: #ff4d6d;
+        }
+
+        .footer-note .vinna {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #b33b57;
+        }
+
+        /* Pop animation */
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pop {
+            animation: pop 0.3s ease;
+        }
+
+        /* Kiss animation */
+        @keyframes kiss {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-5px) rotate(5deg);
+            }
+        }
+
+        .kiss-emoji {
+            animation: kiss 2s infinite;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating hearts and VINNA letters -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="vinna-container">
+        <!-- Header with Vinna's name -->
+        <div class="vinna-header">
+            <div class="name-banner">
+                <h1>Vinna</h1>
+            </div>
+            <div class="sub">
+                <i class="fas fa-heart"></i>
+                <span>my beautiful girlfriend</span>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+
+        <!-- MAIN SURPRISE CARD - CLICK FOR LOVE -->
+        <div class="surprise-card" id="surpriseCard">
+            <div class="vinna-tag">✨ Vinna ✨</div>
+            <div class="click-badge">
+                <i class="fas fa-hand-pointer"></i> CLICK FOR VINNA
+                <i class="fas fa-gift"></i>
+            </div>
+            <div class="gift-box" id="giftBox">
+                <span class="emoji" id="mainEmoji">💕</span>
+            </div>
+            <div class="surprise-message" id="mainMessage">I Love You Vinna!</div>
+            <div class="sweet-text" id="mainSweet">you're my everything</div>
+            <div class="love-note" id="mainNote">
+                <i class="fas fa-heart"></i> for my Vinna, with love <i class="fas fa-heart"></i>
+            </div>
+        </div>
+
+        <!-- Cute stats -->
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-value" id="kissCount">0</div>
+                <div class="stat-label">kisses for Vinna</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="loveMessages">0</div>
+                <div class="stat-label">love notes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="heartBeat">♥</div>
+                <div class="stat-label">heartbeat</div>
+            </div>
+        </div>
+
+        <!-- Vinna's letter showcase -->
+        <div class="vinna-special">
+            <h4>V I N N A</h4>
+            <div class="vinna-letters">
+                <div class="letter-box">V</div>
+                <div class="letter-box">I</div>
+                <div class="letter-box">N</div>
+                <div class="letter-box">N</div>
+                <div class="letter-box">A</div>
+            </div>
+            <p style="color: #a7586b; margin-top: 10px;">every letter spells perfection</p>
+        </div>
+
+        <!-- Love messages grid -->
+        <div class="messages-title">
+            <i class="fas fa-comment-dots"></i>
+            <h3>messages for my Vinna</h3>
+            <i class="fas fa-comment-dots"></i>
+        </div>
+
+        <div class="message-grid" id="messageGrid">
+            <!-- Filled by JS -->
+        </div>
+
+        <!-- Special "Vinna my loving" banner -->
+        <div class="special-banner">
+            <span class="text">💗 Vinna is my</span>
+            <span class="heart-beat">❤️</span>
+            <span class="text">loving forever 💗</span>
+        </div>
+
+        <!-- Last surprises history -->
+        <div class="history-section">
+            <div class="history-label">
+                <i class="fas fa-history"></i> last surprises for Vinna
+            </div>
+            <div class="history-icons" id="historyIcons">
+                <div class="history-icon">💕</div>
+                <div class="history-icon">🥰</div>
+                <div class="history-icon">😘</div>
+            </div>
+        </div>
+
+        <!-- Sweet footer with Vinna's name -->
+        <div class="footer-note">
+            <i class="fas fa-heart"></i> every click is love for <span class="vinna">Vinna</span> <i
+                class="fas fa-heart"></i>
+            <div style="margin-top: 8px;">
+                <span class="kiss-emoji">😘</span> forever yours <span class="kiss-emoji">😘</span>
+            </div>
+            <div style="margin-top: 10px; font-size: 0.9rem;">
+                made with 💕 for my Vinna
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // ---------- LOVE DATABASE with Vinna's name ----------
+            const loveMessages = [
+                {
+                    emoji: '🥰',
+                    message: 'I Love You Vinna!',
+                    sweet: 'my beautiful girlfriend',
+                    note: 'you make my world perfect'
+                },
+                {
+                    emoji: '😘',
+                    message: 'Miss You Vinna!',
+                    sweet: 'counting moments till we meet',
+                    note: 'sending kisses your way'
+                },
+                {
+                    emoji: '💕',
+                    message: 'Vinna You\'re Special!',
+                    sweet: 'the best thing in my life',
+                    note: 'my heart beats for you'
+                },
+                {
+                    emoji: '💗',
+                    message: 'My Vinna!',
+                    sweet: 'you make life beautiful',
+                    note: 'forever and always yours'
+                },
+                {
+                    emoji: '😍',
+                    message: 'Vinna is Beautiful!',
+                    sweet: 'cutest smile ever',
+                    note: 'you take my breath away'
+                },
+                {
+                    emoji: '💋',
+                    message: 'Sweet Vinna!',
+                    sweet: 'blowing you a thousand kisses',
+                    note: 'wish i was holding you'
+                },
+                {
+                    emoji: '🌹',
+                    message: 'My Rose Vinna!',
+                    sweet: 'beautiful and sweet',
+                    note: 'you bloom in my heart'
+                },
+                {
+                    emoji: '✨',
+                    message: 'Vinna You Shine!',
+                    sweet: 'brightest star in my sky',
+                    note: 'my little star forever'
+                },
+                {
+                    emoji: '🎀',
+                    message: 'My Gift Vinna!',
+                    sweet: 'best thing in my life',
+                    note: 'lucky to have you'
+                },
+                {
+                    emoji: '🌟',
+                    message: 'Vinna is Perfect!',
+                    sweet: 'everything i ever wanted',
+                    note: 'you complete me'
+                }
+            ];
+
+            // Quick messages with Vinna's name
+            const quickMessages = [
+                { emoji: '🥰', text: 'love you V' },
+                { emoji: '😘', text: 'miss you V' },
+                { emoji: '💕', text: 'hug you V' },
+                { emoji: '💗', text: 'kiss you V' },
+                { emoji: '🌹', text: 'adore you V' },
+                { emoji: '✨', text: 'cherish V' }
+            ];
+
+            // ---------- DOM Elements ----------
+            const surpriseCard = document.getElementById('surpriseCard');
+            const mainEmoji = document.getElementById('mainEmoji');
+            const mainMessage = document.getElementById('mainMessage');
+            const mainSweet = document.getElementById('mainSweet');
+            const mainNote = document.getElementById('mainNote');
+            const messageGrid = document.getElementById('messageGrid');
+            const historyIcons = document.getElementById('historyIcons');
+            const kissCountEl = document.getElementById('kissCount');
+            const loveMessagesEl = document.getElementById('loveMessages');
+            const heartBeatEl = document.getElementById('heartBeat');
+
+            // ---------- State ----------
+            let currentIndex = 0;
+            let clickCount = 0;
+            let uniqueMessages = new Set([0]);
+            let history = [0, 1, 2];
+
+            // ---------- Helper: Update main display with love message ----------
+            function updateMainDisplay(index) {
+                const msg = loveMessages[index];
+                if (!msg) return;
+
+                mainEmoji.textContent = msg.emoji;
+                mainMessage.textContent = msg.message;
+                mainSweet.textContent = msg.sweet;
+                mainNote.innerHTML = `<i class="fas fa-heart"></i> ${msg.note} <i class="fas fa-heart"></i>`;
+
+                // Add pop animation
+                const giftBox = document.getElementById('giftBox');
+                giftBox.classList.add('pop');
+                setTimeout(() => giftBox.classList.remove('pop'), 300);
+
+                // Change heart color
+                heartBeatEl.style.color = index % 2 === 0 ? '#ff4d6d' : '#ff87a5';
+            }
+
+            // ---------- Add to history ----------
+            function addToHistory(index) {
+                history.unshift(index);
+                if (history.length > 3) history.pop();
+
+                const icons = historyIcons.children;
+                for (let i = 0; i < 3; i++) {
+                    if (i < history.length) {
+                        icons[i].textContent = loveMessages[history[i]].emoji;
+                    }
+                }
+            }
+
+            // ---------- Update stats ----------
+            function updateStats(index) {
+                clickCount++;
+                kissCountEl.textContent = clickCount;
+
+                uniqueMessages.add(index);
+                loveMessagesEl.textContent = uniqueMessages.size;
+
+                // Heartbeat effect
+                heartBeatEl.innerHTML = '♥';
+                setTimeout(() => heartBeatEl.innerHTML = '♥', 100);
+            }
+
+            // ---------- Select a love message by index ----------
+            function selectLoveMessage(index) {
+                if (index < 0 || index >= loveMessages.length) return;
+
+                currentIndex = index;
+                updateMainDisplay(index);
+                addToHistory(index);
+                updateStats(index);
+
+                // Update grid selected state
+                document.querySelectorAll('.message-item').forEach((item, i) => {
+                    if (i < quickMessages.length) {
+                        if (i === index % quickMessages.length) {
+                            item.style.background = '#ffe4f0';
+                            item.style.border = '4px solid #ff6b93';
+                        } else {
+                            item.style.background = 'white';
+                            item.style.border = '2px solid #ffe2ec';
+                        }
+                    }
+                });
+            }
+
+            // ---------- Random surprise ----------
+            function randomSurprise() {
+                const randomIndex = Math.floor(Math.random() * loveMessages.length);
+                selectLoveMessage(randomIndex);
+            }
+
+            // ---------- Render message grid ----------
+            function renderMessageGrid() {
+                let html = '';
+                quickMessages.forEach((msg, i) => {
+                    const isSelected = (i === currentIndex % quickMessages.length);
+                    const borderStyle = isSelected ? '4px solid #ff6b93' : '2px solid #ffe2ec';
+                    const bgColor = isSelected ? '#ffe4f0' : 'white';
+
+                    html += `
+                        <div class="message-item" data-index="${i}" style="background: ${bgColor}; border: ${borderStyle};">
+                            <i class="fas fa-heart" style="color: #ff6b93;"></i>
+                            <span>${msg.emoji} ${msg.text}</span>
+                        </div>
+                    `;
+                });
+
+                // Special large message for Vinna
+                html += `
+                    <div class="message-item large" id="specialMessageBtn">
+                        <i class="fas fa-star" style="color: #ffb347;"></i>
+                        <span>💕 click for Vinna's special love 💕</span>
+                        <i class="fas fa-star" style="color: #ffb347;"></i>
+                    </div>
+                `;
+
+                messageGrid.innerHTML = html;
+
+                // Add click listeners
+                document.querySelectorAll('.message-item[data-index]').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const index = parseInt(this.dataset.index);
+                        const loveIndex = index % loveMessages.length;
+                        selectLoveMessage(loveIndex);
+                    });
+                });
+
+                document.getElementById('specialMessageBtn').addEventListener('click', function () {
+                    const specialIndex = Math.floor(Math.random() * loveMessages.length);
+                    selectLoveMessage(specialIndex);
+                    showFloatingHearts(5);
+                });
+            }
+
+            // ---------- Show floating hearts and VINNA letters ----------
+            function showFloatingHearts(count = 3) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        const element = document.createElement('div');
+                        // Randomly choose heart or letter
+                        if (Math.random() < 0.3) {
+                            element.className = 'vinna-letter';
+                            element.innerHTML = ['V', 'I', 'N', 'N', 'A'][Math.floor(Math.random() * 5)];
+                        } else {
+                            element.className = 'heart';
+                            element.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+                        }
+                        element.style.left = Math.random() * 100 + '%';
+                        element.style.top = Math.random() * 100 + '%';
+                        element.style.fontSize = (20 + Math.random() * 30) + 'px';
+                        element.style.color = `rgba(255, ${100 + Math.random() * 100}, 150, 0.4)`;
+                        element.style.animation = `float ${3 + Math.random() * 4}s infinite ease-in-out`;
+                        document.getElementById('floatingHearts').appendChild(element);
+
+                        setTimeout(() => element.remove(), 4000);
+                    }, i * 200);
+                }
+            }
+
+            // ---------- Create initial floating elements ----------
+            function initFloatingElements() {
+                for (let i = 0; i < 20; i++) {
+                    const element = document.createElement('div');
+                    if (Math.random() < 0.4) {
+                        element.className = 'vinna-letter';
+                        element.innerHTML = ['V', 'I', 'N', 'N', 'A'][Math.floor(Math.random() * 5)];
+                    } else {
+                        element.className = 'heart';
+                        element.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+                    }
+                    element.style.left = Math.random() * 100 + '%';
+                    element.style.top = Math.random() * 100 + '%';
+                    element.style.fontSize = (15 + Math.random() * 25) + 'px';
+                    element.style.animation = `float ${4 + Math.random() * 5}s infinite ease-in-out`;
+                    element.style.animationDelay = Math.random() * 5 + 's';
+                    document.getElementById('floatingHearts').appendChild(element);
+                }
+            }
+
+            // ---------- Heartbeat effect ----------
+            function startHeartbeat() {
+                setInterval(() => {
+                    heartBeatEl.style.transform = 'scale(1.2)';
+                    setTimeout(() => heartBeatEl.style.transform = 'scale(1)', 150);
+                }, 800);
+            }
+
+            // ---------- Initialize ----------
+            function init() {
+                renderMessageGrid();
+                selectLoveMessage(0);
+                initFloatingElements();
+                startHeartbeat();
+
+                kissCountEl.textContent = '1';
+                loveMessagesEl.textContent = '1';
+            }
+
+            // ---------- Event Listeners ----------
+            surpriseCard.addEventListener('click', function () {
+                randomSurprise();
+                showFloatingHearts(3);
+            });
+
+            // Touch feedback
+            surpriseCard.addEventListener('touchstart', function () {
+                this.style.transform = 'scale(0.98)';
+            });
+            surpriseCard.addEventListener('touchend', function () {
+                this.style.transform = 'scale(1)';
+            });
+
+            // Initialize
+            init();
+
+            // Add floating hearts on any click
+            document.addEventListener('click', function () {
+                if (Math.random() < 0.15) {
+                    showFloatingHearts(1);
+                }
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
